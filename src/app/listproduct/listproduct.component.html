@@ -1,0 +1,48 @@
+<div class="panel panel-default">  
+  <div class="panel-heading">  
+      <h1 style="text-align: center">Product</h1><br>  
+      <div class="row" [hidden]="!deletemessage">  
+             
+                <div class="col-sm-4"></div>  
+         z       <div class="col-sm-4">  
+                        <div class="alert alert-info alert-dismissible">  
+                                <button type="button" class="close" data-dismiss="alert">×</button>  
+                                <strong>Product Data Deleted</strong>  
+                        </div>  
+                </div>  
+                <div class="col-sm-4"></div>  
+        </div>             
+    </div>  
+<button type="submit" (click)=" readProduct1()">Existing Product</button>
+<table class="table">
+  <thead>
+    <tr>
+     <th scope="col">Serial Number</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+ 
+ <tr *ngFor ="let product1 of product" > 
+		
+		<td>{{product1.product_id}}</td>
+		<td>{{product1.product_name}}</td>
+		<td>{{product1.product_price}}</td>
+			<button (click)="delete(product1.product_id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>   
+			<button type="submit" (click)="Productupdate(product1.product_id)">Update</button>
+	</tr>
+    </table>
+<div *ngIf = "product1 && isUpdate">
+<h1>Update Product </h1>
+ 	<form #Productupdate = "ngForm" (ngSubmit)="save(Productupdate)">
+ 	Product Id:
+	<input type="text" name ="product_id" readonLy [(ngModel)]="product1.product_id"/><br/>
+	Product Name:
+	<input type="text" name ="product_name"  [(ngModel)]="product1.product_name"/><br/>
+	Product Price:
+	<input type="text" name ="product_price"  [(ngModel)]="product1.product_price"/><br/>
+	<br/>
+	<input type = "submit" value = "update Product"/><br/>
+</form>
+</div>

@@ -1,0 +1,61 @@
+
+                                         <h1>Registration Form</h1>
+                                <form [formGroup]="registrationForm" (ngSubmit)="save()">
+   
+                                     <div class="row">  
+                         <div class=" col-md-offset-1 col-md-4">  
+                         <label for="name"> Name </label>  
+                              <input formControlName="name" class="form-control" type="Required
+                       ">   
+                             </div>  
+                              </div>  
+  
+  <div class="row">  
+    <div class=" col-md-offset-1 col-md-4">  
+        <label for="gst"> GST </label>  
+        <input formControlName="gst" class="form-control" type="text">   
+    </div>  
+  </div>  
+
+   <div class="row">  
+    <div class=" col-md-offset-1 col-md-4">  
+        <label for="username"> Email </label>  
+        <input formControlName="username" class="form-control" type="text">   
+    </div>
+  </div>  
+  
+  <div class="row">  
+    <div class=" col-md-offset-1 col-md-4">  
+        <label for="password"> Password </label>  
+        <input formControlName="password" class="form-control" type="password">   
+    </div>  
+  </div>  
+ 
+  
+     <p><b>Select your Role</b></p>
+          <select formControlName="role">
+            <option value="Seller">Seller</option>
+            <option value="Buyer">Buyer</option>
+          </select><br>
+        
+    <p></p>
+
+
+    <div class="row" style="margin-top: 40px;">  
+    <div class="col-md-offset-1 col-md-4">  
+        <button class="btn btn-md btn-primary btn-style"  >Submit</button>  
+    </div>  
+  </div>  
+</form>
+        <a routerLink="/login"  >SignIN</a> 
+
+        <div class="row"  *ngIf="showMsg">
+        <div class="col-xs-12">
+          <p class="alert alert-success">
+              <strong>Registration Success!</strong> Please click here to SingIn!.
+
+          </p>
+        </div>
+      </div>
+   
+

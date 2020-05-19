@@ -1,0 +1,41 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/seller" >Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+</nav>
+
+    <form [formGroup]="productForm" (ngSubmit)="save()">
+   
+     <div class="row">  
+    <div class=" col-md-offset-1 col-md-4">  
+   <label for="product_name"> ProductName </label>  
+   <input formControlName="product_name" class="form-control" type="text">   
+    </div>  
+ </div>  
+  
+  <div class="row">  
+    <div class=" col-md-offset-1 col-md-4">  
+        <label for="inventories"> Inventorie </label>  
+        <input formControlName="inventories" class="form-control" type="text">   
+    </div>  
+  </div>
+
+  <div class="row">  
+    <div class=" col-md-offset-1 col-md-4">  
+        <label for="product_price"> Product Price </label>  
+        <input formControlName="product_price" class="form-control" type="text">   
+    </div>  
+  </div>  
+
+
+   
+    <div class="row" style="margin-top: 40px;">  
+    <div class="col-md-offset-1 col-md-4">  
+        <button class="btn btn-md btn-primary btn-style"  >Submit</button>  
+    </div>  
+  </div>  
+</form>
+ 
